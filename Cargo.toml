@@ -1,0 +1,24 @@
+[workspace]
+members = ["ui"]
+resolver = "2"
+
+[package]
+name = "brainos"
+version = "0.1.0"
+edition = "2021"
+publish = false
+autobins = false
+
+[lib]
+name = "brainos_kernel"
+path = "src/main.rs"
+crate-type = ["staticlib"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+opt-level = "s"
+codegen-units = 1
+
